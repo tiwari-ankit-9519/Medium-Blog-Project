@@ -188,7 +188,11 @@ app.get("/api/v1/blog/blog", async (c) => {
     datasourceUrl: c.env.DATABASE_URL,
   }).$extends(withAccelerate());
 
-  const posts = await prisma.post.findMany();
+  const posts = await prisma.post.findMany({
+    include: {
+      author: true,
+    },
+  });
 
   return c.json({
     posts,
