@@ -55,6 +55,7 @@ export default function Home() {
             <Topbar />
             {blogs?.map((blog) => (
               <BlogCard
+                id={blog.id}
                 key={blog.id}
                 title={blog?.title}
                 name={blog?.author?.name}
@@ -63,7 +64,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <div className="hidden md:block lg:block lg:col-span-1">Hello</div>
+        <div className="hidden md:block lg:block lg:col-span-1 p-12">Hello</div>
       </div>
     </>
   );

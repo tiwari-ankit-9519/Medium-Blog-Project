@@ -1,12 +1,29 @@
+import { useNavigate } from "react-router-dom";
+
 interface BlogCardProps {
+  id: number;
   name: string;
   title: string;
   created_at: string;
 }
 
-export default function BlogCard({ name, title, created_at }: BlogCardProps) {
+export default function BlogCard({
+  name,
+  title,
+  created_at,
+  id,
+}: BlogCardProps) {
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate(`/blog/${id}`);
+  };
+
   return (
-    <div className="flex flex-col gap-2 p-8 mx-5 md:mx-32 lg:mx-32 cursor-pointer h-44 border-b-2 justify-center ">
+    <div
+      className="flex flex-col gap-2 p-8 mx-5 md:mx-32 lg:mx-32 cursor-pointer h-44 border-b-2 justify-center"
+      onClick={handleCardClick}
+    >
       <div className="flex gap-2 items-center">
         <span className="rounded-full bg-gray-300 flex justify-center items-center h-6 w-6">
           A
