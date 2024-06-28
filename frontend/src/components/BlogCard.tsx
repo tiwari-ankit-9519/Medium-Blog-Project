@@ -13,7 +13,7 @@ export default function BlogCard({ name, title, created_at }: BlogCardProps) {
         </span>
         <p>{name}</p>
       </div>
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between gap-2">
         <div className="flex flex-col">
           <h2 className="font-semibold text-2xl">{title}</h2>
           <p className="text-gray-500">
@@ -24,7 +24,11 @@ export default function BlogCard({ name, title, created_at }: BlogCardProps) {
             })}
           </p>
         </div>
-        <img src="" alt="logo" />
+        <img
+          src="https://miro.medium.com/v2/resize:fit:828/format:webp/0*_689AsbPJNbSuDbL"
+          className="h-24 rounded"
+          alt="logo"
+        />
       </div>
     </div>
   );
