@@ -199,18 +199,6 @@ app.get("/api/v1/blog/blog", async (c) => {
   });
 });
 
-app.get("/api/v1/blog/blog", async (c) => {
-  const prisma = new PrismaClient({
-    datasourceUrl: c.env.DATABASE_URL,
-  }).$extends(withAccelerate());
-
-  const posts = await prisma.post.findMany();
-
-  return c.json({
-    posts,
-  });
-});
-
 app.get("/api/v1/blog/:id", async (c) => {
   const prisma = new PrismaClient({
     datasourceUrl: c.env.DATABASE_URL,
@@ -222,6 +210,9 @@ app.get("/api/v1/blog/:id", async (c) => {
   const post = await prisma.post.findUnique({
     where: {
       id: newId,
+    },
+    include: {
+      author: true,
     },
   });
 

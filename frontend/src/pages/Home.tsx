@@ -43,8 +43,6 @@ export default function Home() {
     getAllBlogs();
   }, [getAllBlogs]);
 
-  console.log(blogs);
-
   return (
     <>
       {error && <p>Error fetching blogs</p>}

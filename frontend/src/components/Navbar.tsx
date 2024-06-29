@@ -4,6 +4,8 @@ import {
   BellIcon,
 } from "@heroicons/react/24/outline";
 
+import { Link } from "react-router-dom";
+
 export default function Navbar() {
   return (
     <nav className="flex justify-between h-12 items-center shadow-xl px-5 py-7">
@@ -21,10 +23,10 @@ export default function Navbar() {
         <MagnifyingGlassIcon className="w-6 h-6 absolute left-20 opacity-50" />
       </div>
       <div className="flex gap-8 items-center">
-        <div className="flex items-center gap-2 cursor-pointer">
+        <Link to="/create" className="flex items-center gap-2 cursor-pointer">
           <PencilSquareIcon className="w-6 h-6 opacity-50" />
           <span className="text-gray-500">Write</span>
-        </div>
+        </Link>
         <BellIcon className="w-6 h-6 cursor-pointer opacity-50" />
         <span className="w-8 h-8 bg-gray-300 rounded-full flex justify-center items-center cursor-pointer">
           A

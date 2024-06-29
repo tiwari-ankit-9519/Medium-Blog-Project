@@ -20,7 +20,7 @@ export default function BlogCard({
   };
 
   return (
-    <div
+    <main
       className="flex flex-col gap-2 p-8 mx-5 md:mx-32 lg:mx-32 cursor-pointer h-44 border-b-2 justify-center"
       onClick={handleCardClick}
     >
@@ -35,7 +35,6 @@ export default function BlogCard({
           <h2 className="font-semibold text-2xl">{title}</h2>
           <p className="text-gray-500">
             {new Date(created_at).toLocaleDateString("en-US", {
-              year: "numeric",
               month: "long",
               day: "numeric",
             })}
@@ -47,6 +46,6 @@ export default function BlogCard({
           alt="logo"
         />
       </div>
-    </div>
+    </main>
   );
 }
